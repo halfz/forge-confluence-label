@@ -1,0 +1,19 @@
+modules:
+  trigger:
+    - key: add-label-to-content
+      function: add-label
+      events:
+        - avi:confluence:created:page
+        - avi:confluence:updated:page
+  function:
+    - key: add-label
+      handler: main.run
+app:
+  id: ari:cloud:ecosystem::app/94a1a78a-d0b2-4955-ab48-83a60d5ec4c2
+  runtime:
+    snapshots: false
+permissions:
+  scopes:
+    - write:confluence-content
+    - search:confluence
+    - read:confluence-content.summary
